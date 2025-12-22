@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="tuneLINQ Sync-Helper für Windows – Synchronisiert Musik, Playlists und Ordner mit der tuneLINQ Android-App im lokalen Netzwerk.">
     <title>tuneLINQ Sync-Helper – Support &amp; Informationen</title>
+    <!-- Microsoft Store Badge Web Component -->
+    <script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
     <style>
     :root{
       /* Logo-nahe Akzentfarben (aus dem Icon abgeleitet) */
@@ -166,6 +168,7 @@
       gap: 10px;
       flex-wrap: wrap;
       margin-top: 10px;
+      align-items: center; /* optisch sauber */
     }
     .btn{
       display:inline-flex;
@@ -284,7 +287,17 @@
       font-size: 13px;
       color: var(--muted);
     }
-  </style>
+
+    /* Microsoft Store Badge: sichtbar/layout-stabil + Größe */
+    ms-store-badge{
+      display:inline-block;
+      line-height:0;
+    }
+    ms-store-badge::part(img){
+      height: 44px;
+      width: auto;
+    }
+    </style>
   </head>
   <body>
     <header>
@@ -316,21 +329,15 @@
             deine Musiksammlung aus ausgewählten Ordnern für die tuneLINQ
             Android-App bereitstellt und Synchronisation/Übertragung im LAN
             erleichtert. </p>
-          <div class="cta"> <a class="btn primary" href="#hilfe">Jetzt
-              starten</a>
-              <script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
-  <style>
-    /* optional: Badge zuverlässig sichtbar machen */
-    ms-store-badge{
-      display:inline-block;
-      line-height:0; /* verhindert „komische“ Inline-Abstände */
-    }
-    /* Größe steuern (die Komponente rendert ein <img> als part) */
-    ms-store-badge::part(img){
-      height: 44px;   /* z.B. passend zu deinen Buttons */
-      width: auto;
-    }
-  </style>
+          <div class="cta"> <a class="btn primary" href="#hilfe">Jetzt starten</a>
+            <!-- Store Badge: HIER ist der Button --> <ms-store-badge
+
+              productid="9P6H0KL58571" theme="dark" window-mode="full" language="de">
+            </ms-store-badge>
+            <!-- Optionaler Fallback, falls JS geblockt oder deaktiviert ist -->
+            <noscript>
+              <a class="btn" href="https://apps.microsoft.com/detail/9P6H0KL58571">Microsoft Store öffnen</a>
+            </noscript> </div>
           <div class="notice" role="note"> Hinweis: Für die Synchronisation wird
             die tuneLINQ Android-App benötigt. Der Helper selbst läuft auf
             Windows. </div>
@@ -345,8 +352,8 @@
               <li>Öffne tuneLINQ auf Android, starte „Synchronisieren“ und gib
                 den Pairing-Code ein.</li>
             </ol>
-            <p class="small"> Tipp: Stelle sicher, dass PC und Smartphone im
-              selben WLAN/LAN sind. </p>
+            <p class="small">Tipp: Stelle sicher, dass PC und Smartphone im
+              selben WLAN/LAN sind.</p>
           </div>
           <div class="card half">
             <h3>Netzwerk &amp; Firewall</h3>
@@ -357,8 +364,8 @@
               <li>Wenn ein Port angezeigt wird, muss dieser im Netzwerk
                 erreichbar sein (z. B. <code>8787</code>).</li>
             </ul>
-            <p class="small"> Falls du einen VPN-Client nutzt, teste kurz ohne
-              VPN. </p>
+            <p class="small">Falls du einen VPN-Client nutzt, teste kurz ohne
+              VPN.</p>
           </div>
           <div class="card third">
             <h3>Was wird übertragen?</h3>
@@ -378,10 +385,9 @@
           </div>
           <div class="card third">
             <h3>Datenschutz</h3>
-            <p> Die Datenschutzerklärung findest du hier: <a href="datenschutz.html"><b>datenschutz.html</b></a>
-            </p>
-            <p class="small"> Wichtig für Store-Listings: Die Seite ist
-              öffentlich und ohne Login erreichbar. </p>
+            <p>Die Datenschutzerklärung findest du hier: <a href="datenschutz.html"><b>datenschutz.html</b></a></p>
+            <p class="small">Wichtig für Store-Listings: Die Seite ist
+              öffentlich und ohne Login erreichbar.</p>
           </div>
         </section>
         <section id="faq" class="grid" aria-label="FAQ">
@@ -390,23 +396,23 @@
             <div class="kvs">
               <div class="kv"> <b>Der Helper findet mein Smartphone nicht – was
                   tun?</b>
-                <div class="small"> Prüfe, ob beide Geräte im selben WLAN/LAN
+                <div class="small">Prüfe, ob beide Geräte im selben WLAN/LAN
                   sind, deaktiviere VPN, und erlaube den Helper in der
-                  Windows-Firewall. </div>
+                  Windows-Firewall.</div>
               </div>
               <div class="kv"> <b>Welche Ports werden verwendet?</b>
-                <div class="small"> Wenn der Helper einen Port anzeigt (z. B. <code>8787</code>),
-                  muss dieser im privaten Netzwerk erreichbar sein. </div>
+                <div class="small">Wenn der Helper einen Port anzeigt (z. B. <code>8787</code>),
+                  muss dieser im privaten Netzwerk erreichbar sein.</div>
               </div>
               <div class="kv"> <b>Warum dauert der Scan so lange?</b>
-                <div class="small"> Große Bibliotheken oder langsame Laufwerke
+                <div class="small">Große Bibliotheken oder langsame Laufwerke
                   können den Scan verlängern. Teste zunächst mit einem kleineren
-                  Ordner. </div>
+                  Ordner.</div>
               </div>
               <div class="kv"> <b>Unterstützt ihr externe Laufwerke/NAS?</b>
-                <div class="small"> In der Regel ja, sofern Windows den Pfad
+                <div class="small">In der Regel ja, sofern Windows den Pfad
                   lesen kann und die Dateien lokal erreichbar sind. Bei NAS:
-                  Netzwerkfreigaben prüfen. </div>
+                  Netzwerkfreigaben prüfen.</div>
               </div>
             </div>
             <p class="small" style="margin-top:12px;"></p>
@@ -434,13 +440,13 @@
     </main>
     <footer>
       <div class="foot">
-        <div class="small"> © <span id="y"></span> tuneLINQ – Sync-Helper </div>
+        <div class="small">© <span id="y"></span> tuneLINQ – Sync-Helper</div>
         <div class="small"> <a href="#impressum">Impressum</a> · <a href="datenschutz.html">Datenschutzerklärung</a>
         </div>
       </div>
     </footer>
     <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
